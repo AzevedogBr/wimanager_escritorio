@@ -18,8 +18,20 @@ class DetectorEventos extends StatelessWidget {
 class MeuBotao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orange,
+    return GestureDetector(
+      onTap: (){
+          final snackBar = SnackBar(content: Text("Ola Gestos/Eventos"));
+          Scaffold.of(context).showSnackBar(snackBar);
+      },
+      
+      child: Container(
+        padding: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          color: Theme.of(context).accentColor,
+          borderRadius: BorderRadius.circular(5.5)
+        ),
+        child: Text("O meu botão"),
+      ),
     );
   }
 }
